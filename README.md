@@ -32,3 +32,8 @@ pip install -r requirement.txt
 ```bash
 python main.py
 ```
+
+## Run tests
+```
+python test.py
+```
