@@ -1,0 +1,6 @@
+# Editors
+.vscode/
+
+# Project files 
+*/__pycache__
+env
