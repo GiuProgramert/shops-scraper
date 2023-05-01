@@ -2,6 +2,8 @@
 
 This script make scrapping of a list of products in differten websites according to sites.json file
 
+![Script execution](./static/script_execution.jpg)
+
 ## Requirements
 - Python 3
 - pip3
