@@ -1,9 +1,7 @@
 from time import sleep
 
-from src.scrapper import load_sites
+from src.scraper import load_sites
 from src.helpers import separator
-
-import json
 
 def main():
     sites = load_sites()

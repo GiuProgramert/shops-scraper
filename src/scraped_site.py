@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from requests import get
 from datetime import datetime
 
-class ScrappedSite():
+class ScrapedSite():
     """
         Site Representation
     """

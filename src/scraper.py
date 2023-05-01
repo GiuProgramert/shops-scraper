@@ -1,14 +1,14 @@
-from src.scrapped_site import ScrappedSite
+from src.scraped_site import ScrapedSite
 import json   
 
-def load_sites() -> list[ScrappedSite]:
-    sites: list[ScrappedSite] = []
+def load_sites() -> list[ScrapedSite]:
+    sites: list[ScrapedSite] = []
     
     with open("sites.json", "r") as file:
         sites_json = json.load(file)
 
         sites = [
-            ScrappedSite(
+            ScrapedSite(
                 url=site["url"],
                 name=site["name"],
                 class_=site["class_"],
