@@ -12,6 +12,7 @@ class ScrapedSite():
         self.name = name
         self.class_ = class_
         self.shop = shop
+        self.date = None
         self.site = None
 
     def _get_site(self) -> BeautifulSoup:
@@ -27,16 +28,23 @@ class ScrapedSite():
 
         self.site = self._get_site()
 
+    def _update_now(self):
+        """Update now info"""
+
+        self.now = datetime.now().strftime("%d/%m/%Y %H:%M")
+
     def get_price(self) -> str:
         """Get price from the class_ element"""
         
         self._update_site()
+        self._update_now()
         price = self.site.find(class_=self.class_).text
         
         self.price = price
 
         return price
 
-    def format(self, format) -> str:
-        now = datetime.now().strftime("%d/%m/%Y %H:%M")
-        return format % (self.shop, self.name, now, self.get_price())
+    def to_list(self) -> list[str]:
+        price = self.get_price()
+
+        return [self.shop, self.name, self.now, price]

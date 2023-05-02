@@ -1,6 +1,6 @@
-def separator() -> None:
-    """Print separator"""
+import os
 
-    separator = f"+{''.join((['-'] * 129))}+"
+def clear_console() -> None:
+    """Clear console using cls or clear according to the os name"""
 
-    print(separator)
+    os.system('cls' if os.name == 'nt' else 'clear')
